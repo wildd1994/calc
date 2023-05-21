@@ -58,9 +58,14 @@ def evaluation(expression: str) -> int:
 
 if __name__ == '__main__':
     a = '9876543210'
-    number = 500
-    solutions = '\n'.join(calc([char for char in a], number))
-    if solutions:
-        print(f'Решения: \n{solutions}')
+    print('Введите число')
+    number = input()
+    if number.isdigit():
+        number = int(number)
+        solutions = '\n'.join(calc([char for char in a], number))
+        if solutions:
+            print(f'Решения для числа {number} последовательности {a}: \n{solutions}')
+        else:
+            print(f'Нет решений для числа {number} последовательности {a}')
     else:
-        print('Нет решений')
+        print(f'Введеное число некорректно')
